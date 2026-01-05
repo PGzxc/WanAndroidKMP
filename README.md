@@ -2,20 +2,22 @@
 
 ## 一 项目预览
 
+**项目预览-Android**
 
-Android截图
+| ![][swkmp-az-1]  | ![][swkmp-az-2]  | ![][swkmp-az-3] |
+| :--------------: | :--------------: | :-------------: |
+| ![][swkmp-az-4]  | ![][swkmp-az-5]  | ![][swkmp-az-6] |
+| ![][swkmp-az-7]  | ![][swkmp-az-8]  | ![][swkmp-az-9] |
+| ![][swkmp-az-10] | ![][swkmp-az-11] |                 |
 
-| ![][multi-az-waz-1] | ![][multi-az-waz-2] | ![][multi-az-waz-3] | ![][multi-az-waz-4] |
-| ------------------- | ------------------- | ------------------- | ------------------- |
-| ![][multi-az-waz-5] | ![][multi-az-waz-6] | ![][multi-az-waz-7] | ![][multi-az-waz-8] |
-| ![][multi-az-waz-9] |                     |                     |                     |
 
-IOS截图
+**项目预览-IOS**
 
-| ![][multi-ios-waz-1] | ![][multi-ios-waz-2] | ![][multi-ios-waz-3] | ![][multi-ios-waz-4] |
-| -------------------- | -------------------- | -------------------- | -------------------- |
-| ![][multi-ios-waz-5] | ![][multi-ios-waz-6] | ![][multi-ios-waz-7] | ![][multi-ios-waz-8] |
-| ![][multi-ios-waz-9] |                      |                      |                      |
+| ![][swkmp-ios-1]  | ![][swkmp-ios-2]  | ![][swkmp-ios-3] |
+| :---------------: | :---------------: | :--------------: |
+| ![][swkmp-ios-4]  | ![][swkmp-ios-5]  | ![][swkmp-ios-6] |
+| ![][swkmp-ios-7]  | ![][swkmp-ios-8]  | ![][swkmp-ios-9] |
+| ![][swkmp-ios-10] | ![][swkmp-ios-11] |                  |
 
 ## 二 开发环境
 
@@ -124,24 +126,32 @@ iosApp/Configuration/Config.xcconfig配置以下信息
 
 * WanAndroid-Compose-Multiplatform改为WanAndroidKMP
 
+### v5.0 项目打包
 
-<!--az-->
-[multi-az-waz-1]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-home-1.png
-[multi-az-waz-2]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-navigator-2.png
-[multi-az-waz-3]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-project-3.png
-[multi-az-waz-4]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-msg-4.png
-[multi-az-waz-5]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-msg-5.png
-[multi-az-waz-6]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-me-6.png
-[multi-az-waz-7]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-me-7.png
-[multi-az-waz-8]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-login-8.png
-[multi-az-waz-9]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-register-9.png
-<!--ios-->
-[multi-ios-waz-1]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-home-1.png
-[multi-ios-waz-2]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-navigator-2.png
-[multi-ios-waz-3]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-project-3.png
-[multi-ios-waz-4]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-msg-4.png
-[multi-ios-waz-5]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-msg-5.png
-[multi-ios-waz-6]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-me-6.png
-[multi-ios-waz-7]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-me-7.png
-[multi-ios-waz-8]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-login-8.png
-[multi-ios-waz-9]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-ios-waz-register-9.png
+* Android：生成签名文件据此生成abi对应输出apk
+* windows：输出exe文件安装后创建桌面快捷方式
+* iOS：暂无
+* Linux：暂无
+* mac：暂无
+
+
+<!--WanAndroid-az-->
+[kmpwaz-az-1]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-home-1.png
+[kmpwaz-az-2]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-navigator-2.png
+[kmpwaz-az-3]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-project-3.png
+[kmpwaz-az-4]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-msg-4.png
+[kmpwaz-az-5]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-msg-5.png
+[kmpwaz-az-6]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-me-6.png
+[kmpwaz-az-7]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-me-7.png
+[kmpwaz-az-8]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-login-8.png
+[kmpwaz-az-9]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-register-9.png
+<!--WanAndroid-ios-->
+[kmpwaz-ios-1]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-home-1.png
+[kmpwaz-ios-2]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-navigator-2.png
+[kmpwaz-ios-3]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-project-3.png
+[kmpwaz-ios-4]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-msg-4.png
+[kmpwaz-ios-5]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-msg-5.png
+[kmpwaz-ios-6]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-me-6.png
+[kmpwaz-ios-7]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-me-7.png
+[kmpwaz-ios-8]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-login-8.png
+[kmpwaz-ios-9]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-ios-register-9.png

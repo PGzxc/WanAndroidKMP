@@ -25,7 +25,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "WanAndroidKMP"
-            packageVersion = "1.0.0" //后面添加
+            packageVersion = "1.0.0"
             vendor = "@zxc"
             description = "WanAndroid"
             copyright = "© 2023  . All rights reserved."
@@ -36,12 +36,12 @@ compose.desktop {
 //            linux{
 //                iconFile.set(project.file(("icons/android_2.png")))
 //            }
-//            windows{
-//                shortcut = true
-//                dirChooser = true
-//                upgradeUuid = "1"
-//                iconFile.set(project.file("icons/android_3.png"))
-//            }
+            windows{
+                shortcut = true
+                dirChooser = true
+                upgradeUuid = "12345678-1234-1234-1234-123456789012"
+                iconFile.set(project.file("icons/android_3.png"))
+            }
         }
     }
 }

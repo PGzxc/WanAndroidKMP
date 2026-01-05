@@ -104,7 +104,8 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.common)
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
-                //implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-swing:1.7.1")
                 //implementation("io.ktor:ktor-client-curl:$ktorVersion") //网络请求
                 //implementation("io.ktor:ktor-client-core-native:$ktorVersion")
             }
