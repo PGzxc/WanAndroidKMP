@@ -120,6 +120,11 @@ iosApp/Configuration/Config.xcconfig配置以下信息
 * 我的
 * 消息
 
+### v4.0 项目名称修改
+
+* WanAndroid-Compose-Multiplatform改为WanAndroidKMP
+
+
 <!--az-->
 [multi-az-waz-1]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-home-1.png
 [multi-az-waz-2]:https://cdn.staticaly.com/gh/PGzxc/CDN/master/blog-resume/multiplatform-az-waz-navigator-2.png
