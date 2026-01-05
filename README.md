@@ -2,22 +2,19 @@
 
 ## 一 项目预览
 
-**项目预览-Android**
+Android截图
 
-| ![][swkmp-az-1]  | ![][swkmp-az-2]  | ![][swkmp-az-3] |
-| :--------------: | :--------------: | :-------------: |
-| ![][swkmp-az-4]  | ![][swkmp-az-5]  | ![][swkmp-az-6] |
-| ![][swkmp-az-7]  | ![][swkmp-az-8]  | ![][swkmp-az-9] |
-| ![][swkmp-az-10] | ![][swkmp-az-11] |                 |
+| ![][kmpwaz-az-1] | ![][kmpwaz-az-2] | ![][kmpwaz-az-3] |
+| :--------------: | :--------------: | :--------------: |
+| ![][kmpwaz-az-4] | ![][kmpwaz-az-5] | ![][kmpwaz-az-6] |
+| ![][kmpwaz-az-7] | ![][kmpwaz-az-8] | ![][kmpwaz-az-9] |
 
+IOS截图
 
-**项目预览-IOS**
-
-| ![][swkmp-ios-1]  | ![][swkmp-ios-2]  | ![][swkmp-ios-3] |
-| :---------------: | :---------------: | :--------------: |
-| ![][swkmp-ios-4]  | ![][swkmp-ios-5]  | ![][swkmp-ios-6] |
-| ![][swkmp-ios-7]  | ![][swkmp-ios-8]  | ![][swkmp-ios-9] |
-| ![][swkmp-ios-10] | ![][swkmp-ios-11] |                  |
+| ![][kmpwaz-ios-1] | ![][kmpwaz-ios-2] | ![][kmpwaz-ios-3] |
+| :---------------: | :---------------: | :---------------: |
+| ![][kmpwaz-ios-4] | ![][kmpwaz-ios-5] | ![][kmpwaz-ios-6] |
+| ![][kmpwaz-ios-7] | ![][kmpwaz-ios-8] | ![][kmpwaz-ios-9] |
 
 ## 二 开发环境
 
