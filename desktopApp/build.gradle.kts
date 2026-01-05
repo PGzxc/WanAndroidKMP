@@ -24,7 +24,7 @@ compose.desktop {
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "WanAndroid-Compose-Multiplatform"
+            packageName = "WanAndroidKMP"
             packageVersion = "1.0.0" //后面添加
             vendor = "@zxc"
             description = "WanAndroid"

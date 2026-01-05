@@ -1,4 +1,4 @@
-rootProject.name = "WanAndroid-Compose-Multiplatform"
+rootProject.name = "WanAndroidKMP"
 
 include(":androidApp")
 include(":shared")
