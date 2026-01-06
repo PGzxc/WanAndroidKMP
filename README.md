@@ -131,6 +131,10 @@ iosApp/Configuration/Config.xcconfig配置以下信息
 * Linux：暂无
 * mac：暂无
 
+### v6.0 win端异常修复
+
+* 项目Item点击异常修复
+
 
 <!--WanAndroid-az-->
 [kmpwaz-az-1]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-home-1.png
