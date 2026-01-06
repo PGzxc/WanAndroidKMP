@@ -5,8 +5,7 @@ import androidx.compose.runtime.mutableStateListOf
 import bean.TreeBean
 import bean.TreeItemBean
 import cafe.adriel.voyager.core.model.ScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
-import kotlinx.coroutines.async
+import cafe.adriel.voyager.core.model.screenModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import service.Api
@@ -29,14 +28,9 @@ class NavigatorViewModel: ScreenModel {
         when (action) {
             is StateAction.FetchData -> {
                 kotlin.runCatching {
-                    coroutineScope.launch {
-                        val navigatorDeferred = async { api.getNavigator() }
-                        val navigatorEntity = navigatorDeferred.await()
-
+                    screenModelScope.launch {
+                        val navigatorEntity = api.getNavigator()
                         treeItemList.addAll(navigatorEntity.data?: emptyList())
-                        print(treeItemList)
-
-
                         _uiState.value = UIState.Success("Success")
                     }
                 }.onFailure {

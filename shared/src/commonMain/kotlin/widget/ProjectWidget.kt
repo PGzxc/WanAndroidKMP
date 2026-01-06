@@ -25,9 +25,9 @@ import viewmodel.ProjectViewModel
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ProjectWidget(viewModel: ProjectViewModel) {
-    val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
     val projectBeanList: List<ProjectBean> = viewModel.projectListData
+    val pagerState = rememberPagerState { if (projectBeanList.isNotEmpty()) projectBeanList.size else 1 }
 
     Column(modifier = Modifier.fillMaxSize()) {
         if (projectBeanList.isNotEmpty()) {
@@ -44,7 +44,7 @@ fun ProjectWidget(viewModel: ProjectViewModel) {
                 }
             }
             HorizontalPager(
-                pageCount = projectBeanList.size, state = pagerState,
+                state = pagerState,
                 contentPadding = PaddingValues(0.dp), modifier = Modifier.weight(1f).fillMaxWidth(),
                 key = { "project_page_${projectBeanList[it].id}" }
             ) { pageIndex ->

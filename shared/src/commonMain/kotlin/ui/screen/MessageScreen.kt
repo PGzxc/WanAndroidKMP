@@ -29,9 +29,9 @@ import widget.MessageList
 fun MessageScreen(viewModel: MessageViewModel = MessageViewModel()) {
 
     val uiState by viewModel.uiState.collectAsState()
-    val pagerState = rememberPagerState()
     val coroutineScope = rememberCoroutineScope()
     val messageList = viewModel.messageTitle
+    val pagerState = rememberPagerState(pageCount = { messageList.size })
 
     Column(modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally) {
         //TitleBar(title = "消息")
@@ -56,7 +56,7 @@ fun MessageScreen(viewModel: MessageViewModel = MessageViewModel()) {
             }
         }
 
-        HorizontalPager(pageCount = messageList.size,
+        HorizontalPager(
             state = pagerState,
             contentPadding = PaddingValues(0.dp),
             modifier = Modifier

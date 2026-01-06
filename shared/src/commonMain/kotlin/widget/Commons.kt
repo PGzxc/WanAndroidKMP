@@ -153,11 +153,9 @@ fun TextInput(
                 ) {
                     Row {
                         if (isPassword) {
-                            Image(
-                                painter = painterResource("icons/ic_eye_normal.png"),
-                                contentDescription = null,
-                                colorFilter = ColorFilter.tint(if (hasFocus) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primaryContainer),
-                                contentScale = ContentScale.Inside,
+                            // Temporarily replaced image with Text due to painterResource issues
+                            Text(
+                                text = if (passwordVisible) "👁" else "👁‍🗨",
                                 modifier = Modifier
                                     .padding(end = 8.dp)
                                     .size(25.dp)
@@ -166,10 +164,9 @@ fun TextInput(
                                     },
                             )
                         }
-                        Image(
-                            painter = painterResource("icons/ic_delete.png"),
-                            contentDescription = null,
-                            contentScale = ContentScale.Inside,
+                        // Temporarily replaced image with Text due to painterResource issues
+                        Text(
+                            text = "×",
                             modifier = Modifier
                                 .size(25.dp)
                                 .clickable {

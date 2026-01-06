@@ -3,7 +3,7 @@ plugins {
     kotlin("native.cocoapods")
     id("com.android.library")
     id("org.jetbrains.compose")
-    kotlin("plugin.serialization") version("1.9.0") //序列化
+    kotlin("plugin.serialization") version "1.9.0" //序列化
     //id("io.ktor.plugin")
 }
 
@@ -26,9 +26,8 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
-        extraSpecAttributes["resources"] = "['src/commonMain/resources/**', 'src/iosMain/resources/**']"
     }
-    val voyagerVersion = "1.0.0-rc06"
+    val voyagerVersion = "1.0.1"
     val ktorVersion = "2.3.3"
     sourceSets {
         val commonMain by getting {
@@ -53,10 +52,14 @@ kotlin {
                 implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
                 // Transitions
                 implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
+                // ScreenModel
+                implementation("cafe.adriel.voyager:voyager-screenmodel:$voyagerVersion")
 
                 //implementation("io.github.irgaly.kottage:kottage:1.5.1") //保存数据
                 implementation("io.github.xxfast:kstore-file:0.6.0")
                 implementation("io.github.xxfast:kstore:0.6.0")
+                // WebView dependency - commented out temporarily due to version compatibility issues
+                // implementation("io.github.kevinnzou:compose-webview-multiplatform:1.8.0")
             }
         }
         val commonTest by getting {

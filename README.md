@@ -135,6 +135,15 @@ iosApp/Configuration/Config.xcconfig配置以下信息
 
 * 项目Item点击异常修复
 
+### v7.0 点击跳转WebView
+
+* 首页Banner点击：传递固定url 跳转到WebViewScreen
+* 首页Item点击：传递Item的 link 参数跳转到WebViewScreen
+*  项目Item点击：传递Item的 link 参数跳转到WebViewScreen
+* 无法通过compose-webview实现，改为expect/actual机制
+
+
+
 
 <!--WanAndroid-az-->
 [kmpwaz-az-1]:https://cdn.jsdelivr.net/gh/PGzxc/CDN/blog-resume/kmpwaz-az-home-1.png

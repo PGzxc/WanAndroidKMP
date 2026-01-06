@@ -66,28 +66,28 @@ fun Banner(
             .height(200.dp)
     ) {
 
-        if (list == null) {
-            //加载中的图片
+        if (list == null || list.isEmpty()) {
+            //加载中的图片或空列表占位符
             Icon(
                 imageVector = Icons.Default.Download, modifier = Modifier.fillMaxSize(),
                 contentDescription = null,
             )
         } else {
-            val pagerState = rememberPagerState(initialPage = 0)
+            val pagerState = rememberPagerState(initialPage = 0) { list.size }
             //监听动画执行
             var executeChangePage by remember { mutableStateOf(false) }
             var currentPageIndex = 0
 
             //自动滚动
             LaunchedEffect(pagerState.currentPage, executeChangePage) {
-                if (pagerState.initialPage > 0) {
+                if (list.size > 0) {
                     delay(timeMillis)
                     //这里直接+1就可以循环，前提是infiniteLoop == true
-                    pagerState.animateScrollToPage((pagerState.currentPage + 1) % (pagerState.targetPage))
+                    pagerState.animateScrollToPage((pagerState.currentPage + 1) % list.size)
                 }
             }
 
-            HorizontalPager(pageCount = list.size, state = pagerState, modifier = Modifier
+            HorizontalPager(state = pagerState, modifier = Modifier
                 .pointerInput(pagerState.currentPage) {
                     awaitPointerEventScope {
                         while (true) {
@@ -107,10 +107,8 @@ fun Banner(
                                 }
                                 //是否已经抬起(忽略按下手势已消费标记)
                                 dragEvent.changedToUpIgnoreConsumed() -> {
-                                    //当页面没有任何滚动/动画的时候pagerState.targetPage为null，这个时候是单击事件
-                                    if (pagerState.targetPage == null) return@awaitPointerEventScope
                                     //当pageCount大于1，且手指抬起时如果页面没有改变，就手动触发动画
-                                    if (currentPageIndex == pagerState.currentPage && pagerState.targetPage > 1) {
+                                    if (currentPageIndex == pagerState.currentPage && list.size > 1) {
                                         executeChangePage = !executeChangePage
                                     }
                                 }

@@ -4,7 +4,7 @@ import action.StateAction
 import androidx.compose.runtime.mutableStateListOf
 import bean.Article
 import cafe.adriel.voyager.core.model.ScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
+import cafe.adriel.voyager.core.model.screenModelScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
@@ -29,19 +29,16 @@ class HomeViewModel : ScreenModel {
         when (action) {
             is StateAction.FetchData -> {
                 kotlin.runCatching {
-                    coroutineScope.launch {
-                        val homeBannerDeferred = async { api.getHomeBanner() }
-                        val homeBannerEntity = homeBannerDeferred.await()
-                        val map = homeBannerEntity.data .map {
+                    screenModelScope.launch {
+                        val homeBannerEntity = api.getHomeBanner()
+                        val map = homeBannerEntity.data?.map {
                             BannerData(title = it.title, imageUrl = it.imagePath, linkUrl = it.url)
-                        }
+                        } ?: emptyList()
 
-                        bannerList.addAll(map?: emptyList())
+                        bannerList.addAll(map)
                         print(bannerList)
 
-
-                        val homeArticleDeferred = async { api.getHomeArticleList(page = 0) }
-                        val homeArticleEntity = homeArticleDeferred.await()
+                        val homeArticleEntity = api.getHomeArticleList(page = 0)
                         articleList.addAll(homeArticleEntity.data?.datas?: emptyList() )
                         print(articleList)
                         _uiState.value = UIState.Success("Success")

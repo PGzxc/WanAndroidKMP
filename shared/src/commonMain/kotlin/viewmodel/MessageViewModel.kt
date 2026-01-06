@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import bean.MessageItem
 import cafe.adriel.voyager.core.model.ScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
-import kotlinx.coroutines.async
+import cafe.adriel.voyager.core.model.screenModelScope
+
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import service.Api
@@ -39,9 +39,8 @@ class MessageViewModel: ScreenModel {
     }
     fun getMessageUnread(){
         kotlin.runCatching {
-            coroutineScope.launch {
-                val messageUnreadDeferred = async { api.getMessageUnRead() }
-                val messageUnreadEntity = messageUnreadDeferred.await()
+            screenModelScope.launch {
+                val messageUnreadEntity = api.getMessageUnRead()
                 messageUnReadList.addAll(messageUnreadEntity.data?.datas ?: emptyList())
                 //print(messageUnReadList)
 
@@ -53,9 +52,8 @@ class MessageViewModel: ScreenModel {
     }
     fun getMessageRead(value: Int) {
         kotlin.runCatching {
-            coroutineScope.launch {
-                val messageReadDeferred = async { api.getMessageRead() }
-                val messageReadEntity = messageReadDeferred.await()
+            screenModelScope.launch {
+                val messageReadEntity = api.getMessageRead()
                 messageReadList.addAll(messageReadEntity.data?.datas ?: emptyList())
                 //print(messageUnReadList)
 

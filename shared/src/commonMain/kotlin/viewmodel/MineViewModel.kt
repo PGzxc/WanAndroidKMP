@@ -8,8 +8,8 @@ import androidx.compose.ui.graphics.Color
 import bean.CoinInfo
 import bean.MeToolBean
 import cafe.adriel.voyager.core.model.ScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
-import kotlinx.coroutines.async
+import cafe.adriel.voyager.core.model.screenModelScope
+
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import service.Api
@@ -34,9 +34,8 @@ class MineViewModel: ScreenModel {
 
     fun getCoinInfo() {
         kotlin.runCatching {
-            coroutineScope.launch {
-                val coinInfoDeferred = async { api.getCoinUserInfo() }
-                val coinInfoEntity = coinInfoDeferred.await()
+            screenModelScope.launch {
+                val coinInfoEntity = api.getCoinUserInfo()
                 coinInfoEntity.data?.let { coinInfo = coinInfoEntity.data }
                 print(coinInfoEntity)
                 _uiState.value = UIState.Success("Success")

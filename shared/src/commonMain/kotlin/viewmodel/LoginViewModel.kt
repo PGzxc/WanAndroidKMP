@@ -4,10 +4,10 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import cafe.adriel.voyager.core.model.ScreenModel
-import cafe.adriel.voyager.core.model.coroutineScope
+import cafe.adriel.voyager.core.model.screenModelScope
 import cafe.adriel.voyager.navigator.Navigator
 import data.store
-import kotlinx.coroutines.async
+
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import service.Api
@@ -28,9 +28,8 @@ class LoginViewModel : ScreenModel {
 
     fun login(username: String, password: String,navigator: Navigator) {
         kotlin.runCatching {
-            coroutineScope.launch {
-                val userInfoDeferred = async { api.login(username, password) }
-                val userInfoEntity = userInfoDeferred.await()
+            screenModelScope.launch {
+                val userInfoEntity = api.login(username, password)
                 if (userInfoEntity.data != null) {
                     store.set(userInfoEntity.data)
                     val user = store.get()
@@ -45,9 +44,8 @@ class LoginViewModel : ScreenModel {
 
     fun register(username: String, password: String, repassword: String,navigator: Navigator) {
         kotlin.runCatching {
-            coroutineScope.launch {
-                val userInfoDeferred = async { api.register(username, password, repassword) }
-                val userInfoEntity = userInfoDeferred.await()
+            screenModelScope.launch {
+                val userInfoEntity = api.register(username, password, repassword)
                 store.set(userInfoEntity.data)
                 val user = store.get()
                 _uiState.value = UIState.Success("Success")

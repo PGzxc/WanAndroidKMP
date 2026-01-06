@@ -17,6 +17,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.LocalNavigator
 import state.UIState
 import viewmodel.HomeViewModel
 import widget.ArticleListItem
@@ -27,6 +28,7 @@ import widget.TitleBar
 @Composable
 fun HomeScreen(homeViewModel: HomeViewModel = HomeViewModel()) {
     val uiState by homeViewModel.uiState.collectAsState()
+    val navigator = LocalNavigator.current
 
     LaunchedEffect(Unit) {
 
@@ -59,12 +61,12 @@ fun HomeScreen(homeViewModel: HomeViewModel = HomeViewModel()) {
                 }
                 item(key = "banner") {
                     Banner(list = homeViewModel.bannerList.toList(), onClick = { link, title ->
-
+                        navigator?.push(WebViewScreen(link, title))
                     })
                 }
                 itemsIndexed(homeViewModel.articleList, key = { index, item -> "${item.id}_${index}" }) { index, item ->
                     ArticleListItem(item = item, itemClick = {
-
+                        navigator?.push(WebViewScreen(item.link, item.title))
                     }) {
 
                     }

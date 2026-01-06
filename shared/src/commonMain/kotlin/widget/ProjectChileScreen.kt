@@ -4,6 +4,8 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import cafe.adriel.voyager.navigator.LocalNavigator
+import ui.screen.WebViewScreen
 import viewmodel.ProjectViewModel
 
 @Composable
@@ -11,6 +13,7 @@ internal fun ProjectChileScreen(
     viewModel: ProjectViewModel,
     cid: Long,
 ) {
+    val navigator = LocalNavigator.current
 
     LaunchedEffect(cid) {
         // 确保只处理当前页面的数据，避免多页面数据混合
@@ -33,7 +36,7 @@ internal fun ProjectChileScreen(
     LazyColumn {
         itemsIndexed(projectItemListBean, key = { index, item -> "${item.id}_${index}" }) { index, item ->
             ArticleListItem(item = item, itemClick = {
-
+                navigator?.push(WebViewScreen(item.link, item.title))
             }) {
 
             }
