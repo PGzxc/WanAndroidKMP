@@ -22,12 +22,12 @@ class MineViewModel: ScreenModel {
     val uiState = _uiState
     val meToolsData by lazy {
         mutableStateListOf<MeToolBean>(
-            MeToolBean("工具", Color.Blue),
-            MeToolBean("问答", Color.Cyan),
-            MeToolBean("消息", Color.Green),
-            MeToolBean("课程", Color.Magenta),
-            MeToolBean("待办清单", Color.LightGray),
-            MeToolBean("分享文章", Color.Red),
+            MeToolBean(1, "工具", Color.Blue),
+            MeToolBean(2, "问答", Color.Cyan),
+            MeToolBean(3, "消息", Color.Green),
+            MeToolBean(4, "课程", Color.Magenta),
+            MeToolBean(5, "待办清单", Color.LightGray),
+            MeToolBean(6, "分享文章", Color.Red),
         )
     }
     var coinInfo by mutableStateOf(CoinInfo())

@@ -52,18 +52,18 @@ fun HomeScreen(homeViewModel: HomeViewModel = HomeViewModel()) {
         is UIState.Success -> {
 
             LazyColumn {
-                item {
+                item(key = "title_bar") {
                     TitleBar("首页", rightIcon = Icons.Default.Search, rightCallBack = {
 
                     })
                 }
-                item {
+                item(key = "banner") {
                     Banner(list = homeViewModel.bannerList.toList(), onClick = { link, title ->
 
                     })
                 }
-                itemsIndexed(homeViewModel.articleList) { index, item ->
-                    ArticleListItem(item = item, itemClick = { url ->
+                itemsIndexed(homeViewModel.articleList, key = { index, item -> "${item.id}_${index}" }) { index, item ->
+                    ArticleListItem(item = item, itemClick = {
 
                     }) {
 

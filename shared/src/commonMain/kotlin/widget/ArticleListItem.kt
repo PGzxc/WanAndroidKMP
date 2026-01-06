@@ -44,7 +44,7 @@ fun ArticleListItem(
 
     Column(modifier = Modifier
         .clickable {
-            itemClick(item.link!!)
+            item.link?.let { itemClick(it) }
         }
         .padding(vertical = 8.dp, horizontal = 10.dp)) {
         //第一行
@@ -68,7 +68,7 @@ fun ArticleListItem(
                         .background(Color.Blue, shape = RoundedCornerShape(2.dp))
                         .padding(horizontal = 5.dp),
 
-                    text = "${item.tags[0].name}",
+                    text = "${item.tags.firstOrNull()?.name ?: ""}",
                     color = Color.White,
                     fontSize = 12.sp
                 )
@@ -123,7 +123,13 @@ fun ArticleListItem(
                     asyncPainterResource(item.envelopePic),
                     modifier = Modifier.size(width = 90.dp, height = 120.dp),
                     contentScale = ContentScale.Crop,
-                    contentDescription = null
+                    contentDescription = null,
+                    onLoading = { _ ->
+                        // 加载中状态，可以显示占位符
+                    },
+                    onFailure = { _ ->
+                        // 加载失败状态，可以显示错误占位符
+                    }
                 )
             }
         }

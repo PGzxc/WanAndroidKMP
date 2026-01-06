@@ -63,7 +63,7 @@ fun MessageList(viewModel: MessageViewModel, index: Int) {
 
                 } else {
                     LazyColumn() {
-                        itemsIndexed(viewModel.messageUnReadList) { index, messageItem ->
+                        itemsIndexed(viewModel.messageUnReadList, key = { index, item -> "${item.id}_${index}" }) { index, messageItem ->
                             MessageView(messageItem = messageItem)
                         }
                     }
@@ -107,7 +107,7 @@ fun MessageList(viewModel: MessageViewModel, index: Int) {
                     }
                 } else {
                     LazyColumn {
-                        itemsIndexed(viewModel.messageReadList) { index, messageItem ->
+                        itemsIndexed(viewModel.messageReadList, key = { index, item -> "${item.id}_${index}" }) { index, messageItem ->
                             MessageView(messageItem = messageItem)
                         }
                     }

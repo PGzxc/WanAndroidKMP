@@ -37,7 +37,7 @@ fun HeadTools(viewModel: MineViewModel) {
                 .fillMaxWidth()
         )
         LazyVerticalGrid(columns = GridCells.Fixed(3)) {
-            itemsIndexed(viewModel.meToolsData) { index, item ->
+            itemsIndexed(viewModel.meToolsData, key = { index, item -> "${item.id}_${index}" }) { index, item ->
                 Box(
                     modifier = Modifier
                         .background(item.color)

@@ -46,7 +46,7 @@ fun ProjectWidget(viewModel: ProjectViewModel) {
             HorizontalPager(
                 pageCount = projectBeanList.size, state = pagerState,
                 contentPadding = PaddingValues(0.dp), modifier = Modifier.weight(1f).fillMaxWidth(),
-                key = { projectBeanList[it].id }
+                key = { "project_page_${projectBeanList[it].id}" }
             ) { pageIndex ->
                 ProjectChileScreen(viewModel = viewModel, cid = projectBeanList[pageIndex].id)
             }

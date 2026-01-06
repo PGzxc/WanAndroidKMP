@@ -57,8 +57,13 @@ fun NavigatorScreen(navigatorViewModel: NavigatorViewModel = NavigatorViewModel(
             LazyColumn {
                 item {
                     TitleBar("导航")
-                    navigatorViewModel.treeItemList.forEachIndexed { index, treeBean ->
+                }
+                navigatorViewModel.treeItemList.forEachIndexed {
+                    index, treeBean ->
+                    item(key = "title_${treeBean.id}_${index}") {
                         ListTitle(title = treeBean.name ?: "标题")
+                    }
+                    item(key = "navigator_${treeBean.id}_${index}") {
                         NavigatorItem(treeBean, onSelect = { parent -> })
                     }
                 }

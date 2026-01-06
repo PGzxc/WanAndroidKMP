@@ -28,5 +28,5 @@ data class MeInfoBean(
 ) {
 }
 
-data class MeToolBean(val name: String, val color: Color) {
+data class MeToolBean(val id: Long, val name: String, val color: Color) {
 }

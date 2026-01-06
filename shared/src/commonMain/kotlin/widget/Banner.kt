@@ -128,7 +128,13 @@ fun Banner(
                     asyncPainterResource(list[page].imageUrl),
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop,
-                    contentDescription = null
+                    contentDescription = null,
+                    onLoading = { _ ->
+                        // 加载中状态，可以显示占位符
+                    },
+                    onFailure = { _ ->
+                        // 加载失败状态，可以显示错误占位符
+                    }
                 )
             }
             Box(
